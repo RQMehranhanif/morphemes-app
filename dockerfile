@@ -7,8 +7,9 @@ WORKDIR /usr/src/app
 # Copy the requirements file into the container at /usr/src/app
 COPY requirements.txt ./
 
+RUN pip install --no-cache-dir --upgrade pip
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt -vvv
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application source code into the container
 COPY . .
